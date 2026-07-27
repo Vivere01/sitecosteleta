@@ -272,21 +272,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .team-carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
     padding: 20px 0;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
 }
 
-.team-carousel::-webkit-scrollbar {
-    display: none;
+.team-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scroll-right 28s linear infinite;
+}
+
+.team-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translate3d(calc(-50% - 10px), 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 .team-member {
     flex: 0 0 280px;
-    scroll-snap-align: start;
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 20px;
