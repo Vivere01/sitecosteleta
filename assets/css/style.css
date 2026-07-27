@@ -282,11 +282,15 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     gap: 20px;
     width: max-content;
-    animation: scroll-right 28s linear infinite;
+    animation: scroll-right 15s linear infinite;
 }
 
 .team-track:hover {
     animation-play-state: paused;
+}
+
+.team-track.paused {
+    animation-play-state: paused !important;
 }
 
 @keyframes scroll-right {

@@ -71,6 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 3. Carousel Infinite Scroll Logic (Handled via CSS keyframe marquee animation)
+    const teamTrack = document.querySelector('.team-track');
+    if (teamTrack) {
+        teamTrack.addEventListener('click', () => {
+            teamTrack.classList.toggle('paused');
+        });
+    }
 
     // 4. Scroll Reveal Observer
     const scrollElements = document.querySelectorAll('.scroll-bottom, .scroll-top, .scroll-left, .scroll-right');
