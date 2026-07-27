@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Typing Animation Logic
+    const typingTarget = document.querySelector('.typing-target');
+    if (typingTarget) {
+        const textToType = "Barbearia Costeleta";
+        typingTarget.textContent = "";
+        let charIndex = 0;
+        
+        function type() {
+            if (charIndex < textToType.length) {
+                typingTarget.textContent += textToType.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 120);
+            } else {
+                typingTarget.style.borderRight = "none";
+            }
+        }
+        
+        setTimeout(type, 500);
+    }
+
     // 1. Modal Logic
     const modal = document.getElementById('bookingModal');
     const openModalBtns = document.querySelectorAll('.open-booking');

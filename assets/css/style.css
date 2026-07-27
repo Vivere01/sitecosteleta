@@ -122,6 +122,12 @@ h1, h2, h3, h4, h5, h6 {
     background-repeat: no-repeat;
 }
 
+.hero .container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
 .hero-content {
     max-width: 600px;
     text-align: left;
@@ -136,6 +142,20 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 4rem;
     line-height: 1.1;
     margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.typing-target {
+    display: inline-block;
+    border-right: 3px solid var(--primary);
+    padding-right: 5px;
+    animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary); }
 }
 
 .hero p {
